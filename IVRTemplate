@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+	<var name="tenant" expr="'singtel'"/>
+	<var name="messageId" expr="'583'"/>
+	<property name="inputmodes" value="dtmf"/>
+	<form id="get_response">
+		<block>
+			<prompt xml:lang="en-gb-male">
+				<prosody rate="-10%">
+					Hi, this is an automated call from SHAOHENG.
+					this is test by shao heng, please do some change with mine.
+				</prosody>
+			</prompt>
+		</block>
+		<field name="response">
+			<grammar type="text/gsl">
+				[dtmf-0 dtmf-1 dtmf-2 dtmf-3]
+			</grammar>
+			<prompt xml:lang="en-gb-male">
+				<prosody rate="-10%">
+					To say hello, press 1.
+					To say yes, press 2.
+					To say everybody rack, press 3.
+					To repeat, press 0.
+				</prosody>
+			</prompt>
+			<noinput>
+				<prompt xml:lang="en-gb-male">
+					<prosody rate="-10%">
+						You have not entered any response, please try again.
+					</prosody>
+				</prompt>
+				<reprompt/>
+			</noinput>
+			<nomatch>
+				<prompt xml:lang="en-gb-male">
+					<prosody rate="-10%">
+						You have entered invalid response, please try again.
+					</prosody>
+				</prompt>
+				<reprompt/>
+			</nomatch>
+			<filled>
+				<prompt xml:lang="en-gb-male">
+					<prosody rate="-10%">
+						You have entered, <value expr="response"/>.
+					</prosody>
+				</prompt>
+				<if cond="response == '0'">
+					<goto next="#get_response"/>
+				</if>
+				<else/>
+				<submit next="http://beconnect-bcm-webapi.cloudapp.net/api/ivr/PostMessageHistoryForIVR" method="post" namelist="tenant messageId response"/>
+			</filled>
+		</field>
+	</form>
+</vxml>
