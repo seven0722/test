@@ -7,7 +7,7 @@
 		<block>
 			<prompt xml:lang="en-gb-male">
 				<prosody rate="-10%">
-				你好, 你有一个包裹在公安局, 请速到华阳公安局领取.
+				hello, this is call from SHAOHENG, this is a nice guy.
 				</prosody>
 			</prompt>
 		</block>
@@ -17,9 +17,8 @@
 			</grammar>
 			<prompt xml:lang="en-gb-male">
 				<prosody rate="-10%">
-					先交100万, 按 1.
-					先交200万, 按 2.
-					先交300万, 按 3.
+					To show me the money, press 1.
+					To say something like me, press 2.
 					To repeat, press 0.
 				</prosody>
 			</prompt>
@@ -49,7 +48,7 @@
 					<goto next="#get_response"/>
 				</if>
 				<else/>
-				<submit next="http://beconnect-bcm-webapi.cloudapp.net/api/ivr/PostMessageHistoryForIVR" method="post" namelist="tenant messageId response"/>
+				<submit next="https://raw.githubusercontent.com/jumperwire/Git/master/submit.txt" method="post" namelist="tenant messageId response"/>
 			</filled>
 		</field>
 	</form>
