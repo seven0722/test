@@ -7,8 +7,7 @@
 		<block>
 			<prompt xml:lang="en-gb-male">
 				<prosody rate="-10%">
-					Hi, this is an automated call from SHAOHENG.
-					this is test by shao heng, please do some change with mine.
+				你好, 你有一个包裹在公安局, 请速到华阳公安局领取.
 				</prosody>
 			</prompt>
 		</block>
@@ -18,9 +17,9 @@
 			</grammar>
 			<prompt xml:lang="en-gb-male">
 				<prosody rate="-10%">
-					To say hello, press 1.
-					To say yes, press 2.
-					To say everybody rack, press 3.
+					先交100万, 按 1.
+					先交200万, 按 2.
+					先交300万, 按 3.
 					To repeat, press 0.
 				</prosody>
 			</prompt>
