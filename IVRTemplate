@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
-	<var name="tenant" expr="'singtel'"/>
+	<var name="tenantName" expr="'singtel'"/>
 	<var name="messageId" expr="'584'"/>
 	<property name="inputmodes" value="dtmf"/>
 	<form id="get_response">
@@ -11,7 +11,7 @@
 				</prosody>
 			</prompt>
 		</block>
-		<field name="response">
+		<field name="option">
 			<grammar type="text/gsl">
 				[dtmf-0 dtmf-1 dtmf-2 dtmf-3]
 			</grammar>
@@ -48,7 +48,7 @@
 					<goto next="#get_response"/>
 				</if>
 				<else/>
-				<submit next="beconnect-bcm-webapi.cloudapp.net/api/PlanChannel/PostMessageHistoryForIVR" method="post" namelist="tenant messageId response"/>
+				<submit next="beconnect-bcm-webapi.cloudapp.net/api/PlanChannel/PostMessageHistoryForIVR" method="post" namelist="tenantName messageId option"/>
 			</filled>
 		</field>
 	</form>
