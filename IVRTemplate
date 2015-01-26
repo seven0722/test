@@ -44,7 +44,7 @@
 						You have entered, <value expr="response"/>.
 					</prosody>
 				</prompt>
-				<if cond="option == '0'">
+				<if cond="response == '0'">
 					<goto next="#get_response"/>
 				</if>
 				<else/>
