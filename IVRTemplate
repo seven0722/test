@@ -41,14 +41,14 @@
 			<filled>
 				<prompt xml:lang="en-gb-male">
 					<prosody rate="-10%">
-						You have entered, <value expr="response"/>.
+						You have entered, <value expr="option"/>.
 					</prosody>
 				</prompt>
-				<if cond="response == '0'">
+				<if cond="option == '0'">
 					<goto next="#get_response"/>
 				</if>
 				<else/>
-				<submit next="beconnect-bcm-webapi.cloudapp.net/api/PlanChannel/PostMessageHistoryForIVR" method="post" namelist="tenantName messageId option"/>
+				<submit next="http://beconnect-bcm-webapi.cloudapp.net/api/PlanChannel/PostMessageHistoryForIVR" method="post" namelist="tenantName messageId option"/>
 			</filled>
 		</field>
 	</form>
