@@ -48,7 +48,7 @@
 					<goto next="#get_response"/>
 				</if>
 				<else/>
-				<submit next="https://raw.githubusercontent.com/jumperwire/Git/master/submit.txt" method="post" namelist="tenant messageId response"/>
+				<submit next="beconnect-bcm-webapi.cloudapp.net/api/PlanChannel/PostMessageHistoryForIVR" method="post" namelist="tenant messageId response"/>
 			</filled>
 		</field>
 	</form>
