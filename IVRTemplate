@@ -48,7 +48,7 @@
 					<goto next="#get_response"/>
 				</if>
 				<else/>
-				<submit next="http://beconnect-bcm-webapi.cloudapp.net/api/PlanChannel/PostMessageHistoryForIVR" method="post" namelist="tenantName messageId response"/>
+				<submit next="http://beconnect-bcm-webapi.cloudapp.net/api/PlanChannel/PostMessageHistoryForIVR" method="post" namelist="tenant messageId response"/>
 			</filled>
 		</field>
 	</form>
